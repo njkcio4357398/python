@@ -2,6 +2,7 @@ class Television:
     """
     A class to simulate a basic Television with power, channel, volume, and mute controls.
     """
+    
     MIN_CHANNEL = 1
     MAX_CHANNEL = 50
     MIN_VOLUME = 0
@@ -60,5 +61,11 @@ class Television:
                 self._last_volume = self._volume
 
     def __str__(self) -> str:
-        """Return the string representation of the TV state."""
-        return f"Power = {self._power}, Channel = {self._channel}, Volume = {self._volume}"
+        """
+        Return the string representation of the TV state.
+        """
+        :return: A formatted string showing power, channel, and volume/mute status.
+        """
+        volume_display = "Muted" if self._muted else self._volume
+        return f"Power = {self._power}, Channel = {self._channel}, Volume = {volume_display}"
+
